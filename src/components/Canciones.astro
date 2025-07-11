@@ -1,0 +1,40 @@
+---
+interface Props {
+    song: string;
+    artist: string;
+    imgURL: string;
+}
+const { artist, song, imgURL } = Astro.props;
+---
+
+<div class="all">
+    <div>
+        <img src={imgURL} alt="" class="pic" />
+    </div>
+    <div class="title">
+        <h1>{song}</h1>
+        <p>{artist}</p>
+    </div>
+    <div>
+        <button class="button">(flecha)</button>
+    </div>
+</div>
+
+<style>
+    .pic {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .all {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+        background-color: white;
+        flex-grow: 1;
+    }
+    .button {
+    }
+</style>
