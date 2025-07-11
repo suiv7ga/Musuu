@@ -3,36 +3,49 @@ import { Icon } from "astro-icon/components";
 ---
 
 <head>
-    <nav class="barra">
-        <div>
-             <a href="/">
-            <Icon name="pixel:music" width="36" height="36" class="icono" />
-        </div>
+    <div class="all">
+        <nav class="barra">
+            <div>
+                <a href="/">
+                    <Icon
+                        name="pixel:music"
+                        width="36"
+                        height="36"
+                        class="icono"
+                    />
+                </a>
 
-        <div>
-            <ul class="enlaces">
-                <li><a href="/albums">Albumes</a></li>
-                <li><a href="/artist">Artistas</a></li>
-                <li><a href="/songs">Canciones</a></li>
-            </ul>
-        </div>
-    </nav>
+                <div>
+                    <ul class="enlaces">
+                        <li><a href="/albums">Albumes</a></li>
+                        <li><a href="/artist">Artistas</a></li>
+                        <li><a href="/songs">Canciones</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <style>
+        .barra {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+        }
+        .enlaces {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .icono {
+            color: purple;
+        }
+        .all {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
-
-<style>
-    .barra {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 30px;
-    }
-    .enlaces {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-    }
-    .icono {
-        color: purple
-    }
-</style>
