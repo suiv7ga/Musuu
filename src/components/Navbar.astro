@@ -5,7 +5,7 @@ import { Icon } from "astro-icon/components";
 <head>
     <div class="all">
         <nav class="barra">
-            <div>
+           
                 <a href="/">
                     <Icon
                         name="pixel:music"
@@ -22,13 +22,14 @@ import { Icon } from "astro-icon/components";
                         <li><a href="/songs">Canciones</a></li>
                     </ul>
                 </div>
-            </div>
+            
         </nav>
     </div>
 
     <style>
         .barra {
             display: flex;
+            flex-direction: column;
             gap: 30px;
             align-items: center;
             justify-content: center;
@@ -41,11 +42,6 @@ import { Icon } from "astro-icon/components";
         }
         .icono {
             color: purple;
-        }
-        .all {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
     </style>
 </head>
