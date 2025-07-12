@@ -5,24 +5,17 @@ import { Icon } from "astro-icon/components";
 <head>
     <div class="all">
         <nav class="barra">
-           
-                <a href="/">
-                    <Icon
-                        name="pixel:music"
-                        width="36"
-                        height="36"
-                        class="icono"
-                    />
-                </a>
+            <a href="/">
+                <Icon name="pixel:music" width="36" height="36" class="icono" />
+            </a>
 
-                <div>
-                    <ul class="enlaces">
-                        <li><a href="/albums">Albumes</a></li>
-                        <li><a href="/artist">Artistas</a></li>
-                        <li><a href="/songs">Canciones</a></li>
-                    </ul>
-                </div>
-            
+            <div>
+                <ul class="enlaces">
+                    <li class="button"><a href="/songs">Canciones</a></li>
+                    <li class="button"><a href="/artist">Artistas</a></li>
+                    <li class="button"><a href="/albums">Albumes</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
 
@@ -41,7 +34,13 @@ import { Icon } from "astro-icon/components";
             align-items: center;
         }
         .icono {
-            color: purple;
+            color: rgb(102, 70, 102);
+        }
+        .button{
+            color:rgb(255, 255, 255);
+            background-color: rgb(81, 59, 102);
+            border-radius: 10px;
+            padding: 5px 10px;
         }
     </style>
 </head>
