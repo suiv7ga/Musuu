@@ -4,43 +4,18 @@ import { Icon } from "astro-icon/components";
 
 <head>
     <div class="all">
-        <nav class="barra">
+        <nav class="flex flex-col gap-8 items-center justify-center px-8 py-3">
             <a href="/">
-                <Icon name="pixel:music" width="36" height="36" class="icono" />
+                <Icon name="pixel:music" width="36" height="36" class="text-purple-900" />
             </a>
 
             <div>
-                <ul class="enlaces">
-                    <li class="button"><a href="/songs">Canciones</a></li>
-                    <li class="button"><a href="/artist">Artistas</a></li>
-                    <li class="button"><a href="/albums">Albumes</a></li>
+                <ul class="flex gap-8 items-center">
+                    <li class="text-white bg-violet-500 rounded-2xl px-2.5 py-1.5"><a href="/songs">Canciones</a></li>
+                    <li class="text-white bg-violet-500 rounded-2xl px-2.5 py-1.5"><a href="/artist">Artistas</a></li>
+                    <li class="text-white bg-violet-500 rounded-2xl px-2.5 py-1.5"><a href="/albums">Albumes</a></li>
                 </ul>
             </div>
         </nav>
     </div>
-
-    <style>
-        .barra {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 30px;
-        }
-        .enlaces {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-        .icono {
-            color: rgb(102, 70, 102);
-        }
-        .button{
-            color:rgb(255, 255, 255);
-            background-color: rgb(81, 59, 102);
-            border-radius: 10px;
-            padding: 5px 10px;
-        }
-    </style>
 </head>

@@ -1,40 +1,34 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface Props {
     song: string;
     artist: string;
     imgURL: string;
+    year: number;
 }
-const { artist, song, imgURL } = Astro.props;
+const { artist, song, imgURL, year } = Astro.props;
 ---
 
-<div class="all">
+<div class="flex flex-row items-center gap-14 bg-amber-50 grow">
     <div>
-        <img src={imgURL} alt="" class="pic" />
+        <img
+            src={imgURL}
+            alt=""
+            class="w-full size-28 object-contain rounded-2xl"
+        />
     </div>
-    <div class="title">
-        <h1>{song}</h1>
+    <div>
+        <h1 class="font-bold text-xl">{song}</h1>
         <p>{artist}</p>
+        <p>{year}</p>
     </div>
     <div>
-        <button class="button">(flecha)</button>
+        <Icon
+            name="stash:play-duotone"
+            width="32"
+            height="32"
+            class="text-violet-950"
+        />
     </div>
 </div>
-
-<style>
-    .pic {
-        width: 100%;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-    .all {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 50px;
-        background-color: white;
-        flex-grow: 1;
-    }
-    .button {
-    }
-</style>
