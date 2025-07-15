@@ -9,7 +9,9 @@ interface Props {
 const { artist, song, imgURL } = Astro.props;
 ---
 
-<div class="flex flex-row items-center gap-14 bg-amber-50/40 grow object-cover justify-between rounded-full">
+<div
+    class="flex flex-row items-center gap-14 bg-amber-50/40 grow object-cover justify-between rounded-full transition-all hover:-translate-y-1 hover:bg-violet-500/20 scale-100 duration-150 ease-in"
+>
     <div>
         <img
             src={imgURL}
