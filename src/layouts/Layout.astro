@@ -14,7 +14,7 @@ import './src/styles/global.css'
 		<title>Astro Basics</title>
 	</head>
 
-	<body class="color">
+	<body class="bg-rose-200/50 p-7">
 		<Navbar />
 
 		<slot />
@@ -23,8 +23,15 @@ import './src/styles/global.css'
 	</body>
 </html>
 
-<style>
-	.color{
-		 background: #ffdcd9ff;
-		 padding: 50}
-</style>
+<script>
+	import Lenis from 'lenis'
+// Initialize Lenis
+const lenis = new Lenis({
+  autoRaf: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+  console.log(e);
+});
+</script>
