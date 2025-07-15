@@ -1,18 +1,16 @@
 ---
 interface Props {
-    category: string;
     artist: string;
     imgURL: string;
 }
-const { artist, category, imgURL } = Astro.props;
+const { artist, imgURL } = Astro.props;
 ---
 
-<div class="flex flex-col items-center grow rounded-x1 bg-amber-50">
+<div class="flex flex-col items-center grow rounded-x1 gap-2.5">
     <div>
-        <img src={imgURL} alt="" class="w-full h-64 object-cover rounded-2xl" />
+        <img src={imgURL} alt="" class="w-3xs h-64 object-cover rounded-2xl" />
     </div>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center bg-amber-50 rounded-full px-7">
         <h1 class="font-bold text-xl">{artist}</h1>
-        <p>{category}</p>
     </div>
 </div>

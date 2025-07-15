@@ -5,23 +5,21 @@ interface Props {
     song: string;
     artist: string;
     imgURL: string;
-    year: number;
 }
-const { artist, song, imgURL, year } = Astro.props;
+const { artist, song, imgURL } = Astro.props;
 ---
 
-<div class="flex flex-row items-center gap-14 bg-amber-50 grow">
+<div class="flex flex-row items-center gap-14 bg-amber-50 grow object-cover justify-between rounded-full">
     <div>
         <img
             src={imgURL}
             alt=""
-            class="w-full size-28 object-contain rounded-2xl"
+            class="w-full size-28 object-contain rounded-full"
         />
     </div>
-    <div>
+    <div class="flex flex-col text-center">
         <h1 class="font-bold text-xl">{song}</h1>
         <p>{artist}</p>
-        <p>{year}</p>
     </div>
     <div>
         <Icon

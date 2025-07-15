@@ -4,7 +4,24 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-     <Albumes artist="Agust-D" category="D-day" imgURL="d-day album.png" year={2023}>
-
-    
+     <div class="flex flex-wrap gap-2.5 p-8">
+          <Albumes
+               album="D-day"
+               artist="Agust-D"
+               category="Hip-Hop"
+               imgURL="d-day album.png"
+          />
+          <Albumes
+               album="Right Place, Wrong Person"
+               artist="RM"
+               category="R&B/Soul"
+               imgURL="right.jpg"
+          />
+          <Albumes
+               album="PAPOTA"
+               artist="Ca7riel & Paco Amoroso"
+               category="Pop"
+               imgURL="papota.jpg"
+          />
+     </div>
 </Layout>

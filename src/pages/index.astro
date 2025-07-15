@@ -1,12 +1,54 @@
 ---
 import Play from "../components/Play.astro";
 import Layout from "../layouts/Layout.astro";
+import Canciones from "../components/Canciones.astro";
 const listanombre = ["BTS", "Stray Kids", "Got7", "Twice"];
 ---
 
 <Layout>
-
-<Play imgURL="d-day album.png" artist="Agust D" title="D-day"/>
-
-
+    <div class="flex flex-row gap-2.5 justify-between px-24 py-7">
+        <div>
+            <Play imgURL="d-day album.png" artist="Agust D" title="D-day" />
+        </div>
+        <div class="flex flex-col gap-2.5">
+            <Canciones artist="Agust-d" song="D-day" imgURL="d-day album.png" />
+            <Canciones
+                artist="Agust-d"
+                song="Haegeum"
+                imgURL="d-day album.png"
+            />
+            <Canciones artist="Agust-d" song="HUH?!" imgURL="d-day album.png" />
+            <Canciones
+                artist="Agust-d"
+                song="AMYGDALA"
+                imgURL="d-day album.png"
+            />
+            <Canciones artist="Agust-d" song="SDL" imgURL="d-day album.png" />
+            <Canciones
+                artist="Agust-d"
+                song="People Pt.2"
+                imgURL="d-day album.png"
+            />
+            <Canciones
+                artist="Agust-d"
+                song="Polar Night"
+                imgURL="d-day album.png"
+            />
+            <Canciones
+                artist="Agust-d"
+                song="Interlude: Dawn"
+                imgURL="d-day album.png"
+            />
+            <Canciones
+                artist="Agust-d"
+                song="Snooze"
+                imgURL="d-day album.png"
+            />
+            <Canciones
+                artist="Agust-d"
+                song="Life Goes On"
+                imgURL="d-day album.png"
+            />
+        </div>
+    </div>
 </Layout>
