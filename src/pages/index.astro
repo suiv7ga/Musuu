@@ -2,7 +2,15 @@
 import Play from "../components/Play.astro";
 import Layout from "../layouts/Layout.astro";
 import Canciones from "../components/Canciones.astro";
-const listanombre = ["BTS", "Stray Kids", "Got7", "Twice"];
+import Tarjetasong from "../components/Tarjetasong";
+import axios from "axios";
+import type { Song } from "../types/songs";
+
+
+const listCanciones = await axios.get(
+    "https://api.institutoalfa.org/api/songs",
+);
+
 ---
 
 <Layout>
@@ -10,45 +18,15 @@ const listanombre = ["BTS", "Stray Kids", "Got7", "Twice"];
         <div>
             <Play imgURL="d-day album.png" artist="Agust D" title="D-day" />
         </div>
+        <div></div>
         <div class="flex flex-col gap-2.5 basis-128">
-            <Canciones artist="Agust-d" song="D-day" imgURL="d-day album.png" />
-            <Canciones
-                artist="Agust-d"
-                song="Haegeum"
-                imgURL="d-day album.png"
-            />
-            <Canciones artist="Agust-d" song="HUH?!" imgURL="d-day album.png" />
-            <Canciones
-                artist="Agust-d"
-                song="AMYGDALA"
-                imgURL="d-day album.png"
-            />
-            <Canciones artist="Agust-d" song="SDL" imgURL="d-day album.png" />
-            <Canciones
-                artist="Agust-d"
-                song="People Pt.2"
-                imgURL="d-day album.png"
-            />
-            <Canciones
-                artist="Agust-d"
-                song="Polar Night"
-                imgURL="d-day album.png"
-            />
-            <Canciones
-                artist="Agust-d"
-                song="Interlude: Dawn"
-                imgURL="d-day album.png"
-            />
-            <Canciones
-                artist="Agust-d"
-                song="Snooze"
-                imgURL="d-day album.png"
-            />
-            <Canciones
-                artist="Agust-d"
-                song="Life Goes On"
-                imgURL="d-day album.png"
-            />
+            {
+                listCanciones.data.songs.map(function (cancion: Song) {
+                    return <Tarjetasong song={cancion} client:visible />;
+                })
+            }
+
+            
         </div>
     </div>
 </Layout>
