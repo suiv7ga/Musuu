@@ -13,7 +13,7 @@ export default function ({song}: Props) {
 
     function handlerClick(){
 
-        console.log('Click en la cancion ' + song.title);
+        console.log('Click en la cancion' + song.title);
 
         $currentSong.set(song);
 

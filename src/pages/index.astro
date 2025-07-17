@@ -5,6 +5,7 @@ import Canciones from "../components/Canciones.astro";
 import Tarjetasong from "../components/Tarjetasong";
 import axios from "axios";
 import type { Song } from "../types/songs";
+import Tarjetaplay from "../components/Tarjetaplay";
 
 
 const listCanciones = await axios.get(
@@ -16,7 +17,11 @@ const listCanciones = await axios.get(
 <Layout>
     <div class="flex flex-row gap-2.5 justify-between px-24 py-7">
         <div>
-            <Play imgURL="d-day album.png" artist="Agust D" title="D-day" />
+            {
+                listCanciones.data.songs.map(function (cancion: Song) {
+                    return <Tarjetaplay song={cancion} client:visible />;
+                })
+            }
         </div>
         <div></div>
         <div class="flex flex-col gap-2.5 basis-128">
