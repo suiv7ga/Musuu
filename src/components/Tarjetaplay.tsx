@@ -44,7 +44,7 @@ export default function () {
             </div>
 
 
-            <audio src={song?.audio.url} controls autoPlay ref={refAudio}></audio>
+            <audio src={song?.audio.url} autoPlay ref={refAudio}></audio>
 
 
             <div className="flex flex-row gap-1">
