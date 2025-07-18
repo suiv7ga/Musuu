@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { MdOutlinePlayCircleFilled } from 'react-icons/md';
 import { MdReplay } from 'react-icons/md';
 import { MdSkipNext } from 'react-icons/md';
@@ -10,12 +10,26 @@ export default function () {
 
     const [song, setSong] = React.useState<null | Song>(null)
 
-    React.useEffect(function() {
-        $currentSong.subscribe(function(state) {
+    const refAudio = useRef<null | HTMLAudioElement>(null)
+
+    React.useEffect(function () {
+        $currentSong.subscribe(function (state) {
 
             setSong(state)
         })
-    }, [] )
+    }, [])
+
+    function handlerPlay() {
+        if (refAudio.current) {
+            if (refAudio.current.paused) {
+                refAudio.current.play()
+            } else {
+                refAudio.current.pause()
+            }
+
+        }
+    }
+
 
 
     return (
@@ -29,8 +43,9 @@ export default function () {
                 <p>{song?.author}</p>
             </div>
 
-            <audio src={song?.audio.url} controls autoPlay></audio>
-            
+
+            <audio src={song?.audio.url} controls autoPlay ref={refAudio}></audio>
+
 
             <div className="flex flex-row gap-1">
                 <span>0.00</span>
@@ -42,7 +57,7 @@ export default function () {
 
                 < MdReplay className="text-4xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
                 <MdSkipNext className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in -scale-100" />
-                <MdOutlinePlayCircleFilled className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
+                <MdOutlinePlayCircleFilled onClick={handlerPlay} className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
                 <MdSkipNext className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
                 <MdOutlinePlaylistAdd className="text-4xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
 
