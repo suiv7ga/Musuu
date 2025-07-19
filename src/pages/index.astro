@@ -7,26 +7,21 @@ import axios from "axios";
 import type { Song } from "../types/songs";
 import Tarjetaplay from "../components/Tarjetaplay.tsx";
 
-
 const listCanciones = await axios.get(
     "https://api.institutoalfa.org/api/songs",
 );
-
 ---
 
 <Layout>
-    <div class="flex flex-row justify-between px-24 py-7">
-        <div> <Tarjetaplay client:visible/>
+    <div class="flex flex-row justify-center gap-32">
+        <div><Tarjetaplay client:visible />
         </div>
-        <div>
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-2.5 basis-sm">
             {
                 listCanciones.data.songs.map(function (cancion: Song) {
                     return <Tarjetasong song={cancion} client:visible />;
                 })
             }
-
-            
         </div>
     </div>
 </Layout>

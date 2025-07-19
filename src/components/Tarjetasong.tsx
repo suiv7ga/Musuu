@@ -25,7 +25,7 @@ export default function ({song}: Props) {
 
 
         <div
-            className="flex flex-row items-center gap-14 bg-amber-50/40 grow object-cover justify-between rounded-full transition-all hover:-translate-y-1 hover:bg-violet-500/20 scale-100 duration-150 ease-in overflow-hidden"
+            className="flex flex-row items-center gap-14 bg-amber-50/40 grow object-cover justify-between rounded-xl transition-all hover:-translate-y-1 hover:bg-violet-500/20 scale-100 duration-150 ease-in overflow-hidden"
         >
             <div>
                 <img
@@ -38,8 +38,8 @@ export default function ({song}: Props) {
                 <h1 className="font-bold text-xl">{song.title}</h1>
                 <p>{song.author}</p>
             </div>
-            <div>
-                <AiFillPlayCircle className="text-3xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" onClick={handlerClick} />
+            <div className='pr-4'>
+                <button><AiFillPlayCircle className="text-3xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" onClick={handlerClick} /></button>
             </div>
         </div>
 

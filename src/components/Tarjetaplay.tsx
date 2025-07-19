@@ -30,8 +30,12 @@ export default function () {
         }
     }
 
-
-
+    function handlerReplay() {
+        if (refAudio.current) {
+            refAudio.current.currentTime = refAudio.current.duration;
+        }
+    }
+ 
     return (
         <div className="flex flex-col items-center text-center gap-1">
             <div>
@@ -47,19 +51,13 @@ export default function () {
             <audio src={song?.audio.url} autoPlay ref={refAudio}></audio>
 
 
-            <div className="flex flex-row gap-1">
-                <span>0.00</span>
-                <input type="range" id="music-bar" value="0" min="0" max="100" step="0.3" />
-                <span>4:00</span>
-            </div>
-
             <div className="flex flex-row items-center gap-3.5 py-3.5">
 
-                < MdReplay className="text-4xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
-                <MdSkipNext className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in -scale-100" />
-                <MdOutlinePlayCircleFilled onClick={handlerPlay} className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
-                <MdSkipNext className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
-                <MdOutlinePlaylistAdd className="text-4xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" />
+                <button>< MdReplay onClick={handlerReplay} className="text-4xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" /></button>
+                <button><MdSkipNext className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in -scale-100" /></button>
+                <button><MdOutlinePlayCircleFilled onClick={handlerPlay} className="text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" /></button>
+                <button><MdSkipNext  className= "text-6xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" /></button>
+                <button><MdOutlinePlaylistAdd className="text-4xl text-violet-500 hover:text-violet-700 transition-all duration-150 ease-in" /></button>
 
             </div>
         </div>

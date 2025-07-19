@@ -1,4 +1,4 @@
-export interface Song { 
+export interface Song {
     _id: number
     title: string
     album: string
