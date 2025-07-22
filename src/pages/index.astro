@@ -13,10 +13,9 @@ const listCanciones = await axios.get(
 ---
 
 <Layout>
-    <div class="flex flex-row justify-center gap-32">
-        <div><Tarjetaplay client:visible />
-        </div>
-        <div class="flex flex-col gap-2.5 basis-sm">
+    <div class="grid gap-8 md:grid-cols-2 md:text-left">
+        <div><Tarjetaplay client:visible /></div>
+        <div class="grid gap-5">
             {
                 listCanciones.data.songs.map(function (cancion: Song) {
                     return <Tarjetasong song={cancion} client:visible />;
