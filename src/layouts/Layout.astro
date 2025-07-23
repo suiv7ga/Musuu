@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import './src/styles/global.css'
+import "./src/styles/global.css";
 ---
 
 <!doctype html>
@@ -11,7 +11,19 @@ import './src/styles/global.css'
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		
+		<title>Musu Player</title>
+
+		<meta property="og:title" content="Purple" />
+		<meta property="og:type" content="image" />
+		<meta
+			property="og:url"
+			content="https://www.imdb.com/title/tt0117500/"
+		/>
+		<meta
+			property="og:image"
+			content="https://dominio/15.webp"
+		/>
 	</head>
 
 	<body class="bg-rose-200/50 p-7">
@@ -24,14 +36,14 @@ import './src/styles/global.css'
 </html>
 
 <script>
-	import Lenis from 'lenis'
-// Initialize Lenis
-const lenis = new Lenis({
-  autoRaf: true,
-});
+	import Lenis from "lenis";
+	// Initialize Lenis
+	const lenis = new Lenis({
+		autoRaf: true,
+	});
 
-// Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-  console.log(e);
-});
+	// Listen for the scroll event and log the event data
+	lenis.on("scroll", (e) => {
+		console.log(e);
+	});
 </script>
